@@ -3,8 +3,9 @@ import setuptools
 setuptools.setup(
     name='rime',
     version='2.0.dev1',
-    scripts=['bin/rime', 'bin/rime_init'],
-    packages=['rime', 'rime.basic', 'rime.basic.targets', 'rime.basic.util',
+    entry_points={"console_scripts": ["rime=rime._main:_main", "rime_init=rime.init._main:_main"]},
+    packages=['rime', 'rime.init',
+              'rime.basic', 'rime.basic.targets', 'rime.basic.util',
               'rime.core', 'rime.plugins', 'rime.plugins.judge_system',
               'rime.plugins.plus', 'rime.plugins.summary', 'rime.util'],
     package_dir={'rime': 'rime'},

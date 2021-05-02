@@ -1,5 +1,3 @@
-#!/usr/bin/python
-
 """
 Initialize a rime project.
 """
@@ -10,7 +8,7 @@ import sys
 
 from six.moves import urllib
 
-from rime.plugins.plus import rime_plus_version
+from ..plugins.plus import rime_plus_version
 
 
 def make_file(path, content):
@@ -18,7 +16,7 @@ def make_file(path, content):
         f.write(content)
 
 
-if __name__ == '__main__':
+def _main():
     if os.path.exists('PROJECT'):
         print('This directory is already a rime project root.')
         sys.exit(1)
